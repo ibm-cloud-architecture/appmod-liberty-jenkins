@@ -324,7 +324,7 @@ The result will be:
 Issue the following commands to create the application from the template:
 
 ```
-oc new-app gse-liberty-build -p APPLICATION_NAME=cos-liberty -p SOURCE_URL="https://github.com/ibm-cloud-architecture/cloudpak-for-applications" -n cos-liberty-build
+oc new-app gse-liberty-build -p APPLICATION_NAME=cos-liberty -p SOURCE_URL="https://github.com/ibm-cloud-architecture/appmod-liberty-jenkins"-p SOURCE_REF="master" -n cos-liberty-build
 ```
 
 ## Run the pipeline
