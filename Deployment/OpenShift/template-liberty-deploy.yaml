@@ -107,7 +107,7 @@ objects:
           readinessProbe:
             tcpSocket:
               port: 9443
-            initialDelaySeconds: 180
+            initialDelaySeconds: 90
             periodSeconds: 5
             successThreshold: 1
             timeoutSeconds: 1

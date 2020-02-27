@@ -324,7 +324,7 @@ The result will be:
 Issue the following commands to create the application from the template:
 
 ```
-oc new-app gse-liberty-build -p APPLICATION_NAME=cos-liberty -p SOURCE_URL="https://github.com/ibm-cloud-architecture/appmod-liberty-jenkins"-p SOURCE_REF="master" -n cos-liberty-build
+oc new-app gse-liberty-build -p APPLICATION_NAME=cos-liberty -p SOURCE_URL="https://github.com/ibm-cloud-architecture/appmod-liberty-jenkins" -p SOURCE_REF="master" -n cos-liberty-build
 ```
 
 ## Run the pipeline
@@ -387,19 +387,23 @@ Now that the pipeline is complete, validate the Customer Order Services applicat
 ### Run the pipeline on 4.x
 The newly created pipeline can be started from the RedHat OpenShift console which allows access to the Jenkins logs but also tracks the progress in the OCP console.
 
-1. Navigate to **Builds** from the Developer view and click the **Start Build** button from the **Actions** dropdown
+1. In the OpenShift Container Platform UI, change to the **Developer** view, select the `cos-liberty-build` project.
+
+2. Select **Builds** anf then select `cos-liberty-pipeline`
+
+3. Click the **Start Build** button from the **Actions** dropdown
 
   ![Run Pipeline](images/liberty-deploy/4.x-build-pipeline.jpg)
 
-2. When the pipeline starts, click the `view log` link to go to the Jenkins administration console. Note that it may take a couple of minutes before the `view log` link appears on the first pipeline build
+4. When the pipeline starts, click the `view log` link to go to the Jenkins administration console. Note that it may take a couple of minutes before the `view log` link appears on the first pipeline build
 
   ![View Log](images/liberty-deploy/4.x-view-log.jpg)
 
-3. When prompted, log in with your OpenShift account and grant the required access permissions. The Jenkins console log will be displayed as shown below:
+5. When prompted, log in with your OpenShift account and grant the required access permissions. The Jenkins console log will be displayed as shown below:
 
   ![Jenkins Log](images/liberty-deploy/jenkins-log.jpg)
 
-4. Return to the OpenShift Console and track the progress of the pipeline
+6. Return to the OpenShift Console and track the progress of the pipeline
 
   ![Running](images/liberty-deploy/4.x-pipeline-running.jpg)
 
