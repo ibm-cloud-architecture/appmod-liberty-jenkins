@@ -249,6 +249,17 @@ oc policy add-role-to-user edit system:serviceaccount:cos-liberty-build:jenkins 
 oc policy add-role-to-user edit system:serviceaccount:cos-liberty-build:jenkins -n cos-liberty-prod
 ```
 
+## Update the dev, stage and prod service accounts
+The service accounts in the `dev`, `stage` and `prod` namespaces will need to be able to pull images created by the Jenkins process from the `build` namespace. 
+
+Issue the commands below to add the `image-puller` role to the service accounts in the `dev`, `stage` and `prod` projects.
+
+```
+oc policy add-role-to-group system:image-puller system:serviceaccounts:cos-liberty-dev --namespace=cos-liberty-build
+oc policy add-role-to-group system:image-puller system:serviceaccounts:cos-liberty-stage --namespace=cos-liberty-build
+oc policy add-role-to-group system:image-puller system:serviceaccounts:cos-liberty-prod --namespace=cos-liberty-build
+```
+
 ### Import the deployment templates
 RedHat OpenShift [templates](https://docs.openshift.com/container-platform/3.11/dev_guide/templates.html) are used to make artifact creation easier and repeatable. The template definition provided [here](https://github.com/ibm-cloud-architecture/appmod-liberty-jenkins/blob/master/Deployment/OpenShift/template-liberty-deploy.yaml) defines a Kubernetes [`Service`](https://kubernetes.io/docs/concepts/services-networking/service/), [`Route`](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html) and [`DeploymentConfig`](https://docs.openshift.com/container-platform/3.11/architecture/core_concepts/deployments.html#deployments-and-deployment-configurations) for the CustomerOrderServices application.
 
