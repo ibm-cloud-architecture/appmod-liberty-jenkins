@@ -169,7 +169,7 @@ You can clone the repository from its main GitHub repository page and checkout t
 
 ```
 git clone https://github.com/ibm-cloud-architecture/appmod-liberty-jenkins.git
-cd cloudpak-for-applications
+cd appmod-liberty-jenkins
 ```
 
 ### Create application database infrastructure
@@ -177,7 +177,7 @@ As said in the prerequisites section above, the Customer Order Services applicat
 
 1. Copy the createOrderDB.sql and initialDataSet.sql files you can find in the Common directory of this repository over to the db2 host machine (or git clone the repository) in order to execute them later.
 
-2. Ssh into the db2 host
+2. ssh into the db2 host
 
 3. Change to the db2 instance user: `su {database_instance_name}``
 
